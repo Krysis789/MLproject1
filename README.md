@@ -17,7 +17,7 @@
   2. Implementations of machine learning methods
   3. Data cleaning and pre-processing
   4. Training of the machine learning methods
-  5. Compairing the diffrent methods applied to the whole dataset
+  5. Compairing the different methods applied to the whole dataset
   6. Logistic regression applied to data splitted in 3 matrices based on column `PRI_jet_num`
 
 * `proj1_helpers.py`  provided helpers functions

@@ -1,4 +1,4 @@
-import numpy as np
+##Implementations of the required function
 
 #Linear regression using gradient descent
 def least_squares_GD(y, tx, initial_w, max_iters, gamma):
@@ -68,15 +68,15 @@ def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
     n = len(y)
     while (nIters < max_iters): 
         ##Calculate the hessian matrix
-        #S = sigmoid(np.dot(tx, w))
-        #S = S * (1 - S)
-        #tmp = np.transpose((np.transpose(tx) * S))
-        #hessian = np.dot(np.transpose(tx) / n, tmp) + lambda_
+        S = sigmoid(np.dot(tx, w))
+        S = S * (1 - S)
+        tmp = np.transpose((np.transpose(tx) * S))
+        hessian = np.dot(np.transpose(tx), tmp) + lambda_
         
         #Calculate the gradient
-        gradient = np.dot(np.transpose(tx) / n, sigmoid(np.dot(tx, w)) - y) + lambda_ * w
+        gradient = np.dot(np.transpose(tx), sigmoid(np.dot(tx, w)) - y) + lambda_ * w
         #Update w
-        w -= gamma * gradient # np.dot(np.linalg.inv(hessian), gradient)
+        w -= gamma * np.dot(np.linalg.inv(hessian), gradient)
         #Update number of iterations
         nIters += 1
         
